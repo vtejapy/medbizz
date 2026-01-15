@@ -1,73 +1,84 @@
-# Welcome to your Lovable project
+# MedBizz - Healthcare Staffing Platform
 
-## Project info
+A modern healthcare staffing platform connecting hospitals with qualified medical professionals.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## About
 
-## How can I edit this code?
+MedBizz is a comprehensive healthcare staffing solution designed to bridge the gap between healthcare facilities and qualified medical professionals. Whether you need temporary coverage or permanent staff, we deliver reliable professionals when you need them most.
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **For Hospitals**: Request qualified medical staff (doctors, nurses) for temporary or permanent positions
+- **For Medical Professionals**: Register and find rewarding opportunities with top healthcare facilities
+- **Services**: Doctor staffing, nurse staffing, locum tenens, temporary & permanent placements
+- **24/7 Support**: Round-the-clock assistance for urgent staffing needs
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Technologies Used
 
-Changes made via Lovable will be committed automatically to this repo.
+This project is built with modern web technologies:
 
-**Use your preferred IDE**
+- **Vite** - Fast build tool and development server
+- **TypeScript** - Type-safe JavaScript
+- **React** - UI component library
+- **shadcn-ui** - Beautiful, accessible component library
+- **Tailwind CSS** - Utility-first CSS framework
+- **React Router** - Client-side routing
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Getting Started
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Prerequisites
 
-Follow these steps:
+- Node.js (v18 or higher)
+- npm or bun package manager
+
+### Installation
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Clone the repository
+git clone git@github.com:vtejapy/medbizz.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to the project directory
+cd medbizz
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Available Scripts
 
-**Use GitHub Codespaces**
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+- `npm run test` - Run tests
+- `npm run test:watch` - Run tests in watch mode
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
 
-## What technologies are used for this project?
+```
+medbizz/
+├── src/
+│   ├── components/     # Reusable UI components
+│   ├── pages/          # Page components (Home, About, Services, etc.)
+│   ├── hooks/          # Custom React hooks
+│   ├── lib/            # Utility functions
+│   └── assets/         # Images and static assets
+├── public/             # Public static files
+└── index.html          # HTML entry point
+```
 
-This project is built with:
+## Contact
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Website**: [Your website URL]
+- **Email**: info@medbizz.com
+- **Careers**: careers@medbizz.com
+- **Urgent Support**: urgent@medbizz.com
 
-## How can I deploy this project?
+## License
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Copyright © 2025 MedBizz. All rights reserved.
