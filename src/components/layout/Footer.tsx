@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Heart, Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -8,13 +9,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary shadow-md">
-                <Heart className="h-5 w-5 text-primary-foreground" />
-              </div>
-              <span className="text-xl font-bold">
-                Med<span className="text-primary">Bizz</span>
-              </span>
+            <Link to="/" className="flex items-center">
+              <img src={logo} alt="MedBizz Consulting" className="h-10" />
             </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               Connecting healthcare facilities with qualified medical professionals. 

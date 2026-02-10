@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Heart, Phone } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,13 +21,8 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
       <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl hero-gradient shadow-md">
-            <Heart className="h-5 w-5 text-primary-foreground" />
-          </div>
-          <span className="text-xl font-bold text-foreground">
-            Med<span className="text-primary">Bizz</span>
-          </span>
+        <Link to="/" className="flex items-center">
+          <img src={logo} alt="MedBizz Consulting" className="h-10" />
         </Link>
 
         {/* Desktop Navigation */}
