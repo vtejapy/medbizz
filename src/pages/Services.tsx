@@ -10,7 +10,8 @@ import {
   HeartPulse,
   Syringe,
   Activity,
-  Users
+  Users,
+  Wrench
 } from "lucide-react";
 
 const Services = () => {
@@ -52,6 +53,39 @@ const Services = () => {
       title: "Specialty Nurses",
       description: "Specialized nursing professionals for OR, L&D, pediatrics, oncology, and more.",
       features: ["Specialty certified", "Procedure-trained", "Department-specific"],
+    },
+  ];
+
+  const technicianServices = [
+    {
+      title: "Lab Technicians",
+      description: "Skilled laboratory technicians for clinical and diagnostic labs, proficient in sample collection, analysis, and reporting.",
+      features: ["Blood & urine analysis", "Microbiology", "Biochemistry", "Pathology"],
+    },
+    {
+      title: "ECG Technicians",
+      description: "Trained ECG technicians for electrocardiogram recording, Holter monitoring, and stress testing.",
+      features: ["12-lead ECG", "Holter monitoring", "TMT / Stress test", "Patient preparation"],
+    },
+    {
+      title: "X-Ray / Radiology Technicians",
+      description: "Certified radiology technologists for X-ray, CT scan, MRI, ultrasound, and other imaging services.",
+      features: ["X-Ray", "CT scan", "MRI", "Ultrasound"],
+    },
+    {
+      title: "OT Technicians",
+      description: "Operation theatre technicians skilled in surgical instrument handling, sterilization, and assisting surgeons during procedures.",
+      features: ["Sterile technique", "Instrument management", "Surgeon assistance", "OT setup"],
+    },
+    {
+      title: "Dialysis Technicians",
+      description: "Experienced dialysis technicians for hemodialysis and peritoneal dialysis procedures in hospitals and dialysis centers.",
+      features: ["Hemodialysis", "Peritoneal dialysis", "Machine operation", "Patient monitoring"],
+    },
+    {
+      title: "Pharmacy Technicians",
+      description: "Experienced pharmacy technicians for medication dispensing, inventory management, and compounding.",
+      features: ["Dispensing", "IV compounding", "Inventory management", "Drug interaction checks"],
     },
   ];
 
@@ -165,8 +199,45 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Staffing Types */}
+      {/* Technician Staffing */}
       <section className="py-24 bg-background">
+        <div className="container">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="w-14 h-14 rounded-xl bg-healthcare-blue/20 flex items-center justify-center">
+              <Wrench className="h-7 w-7 text-healthcare-blue" />
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold">Technician Staffing</h2>
+              <p className="text-muted-foreground">ECG, X-Ray, Lab, OT, Dialysis, and Pharmacy technicians</p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {technicianServices.map((service) => (
+              <div
+                key={service.title}
+                className="p-8 rounded-2xl bg-card border border-border hover:shadow-lg transition-shadow"
+              >
+                <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
+                <p className="text-muted-foreground mb-6">{service.description}</p>
+                <ul className="flex flex-wrap gap-2">
+                  {service.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className="px-3 py-1 rounded-full bg-secondary text-sm text-secondary-foreground"
+                    >
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Staffing Types */}
+      <section className="py-24 bg-secondary/50">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">

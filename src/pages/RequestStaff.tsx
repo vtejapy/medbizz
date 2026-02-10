@@ -196,6 +196,7 @@ const RequestStaff = () => {
                           <SelectContent>
                             <SelectItem value="doctor">Doctor</SelectItem>
                             <SelectItem value="nurse">Nurse</SelectItem>
+                            <SelectItem value="technician">Technician</SelectItem>
                             <SelectItem value="both">Both Doctors & Nurses</SelectItem>
                           </SelectContent>
                         </Select>

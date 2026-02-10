@@ -9,7 +9,8 @@ import {
   UserCheck, 
   ArrowRight, 
   Building, 
-  CheckCircle2 
+  CheckCircle2,
+  Wrench
 } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
 
@@ -248,17 +249,17 @@ const Index = () => {
               </div>
               <div className="space-y-6 pt-12">
                 <div className="p-6 rounded-2xl bg-secondary border border-border">
-                  <Clock className="h-10 w-10 text-healthcare-blue mb-4" />
-                  <h3 className="font-semibold text-lg mb-2">Temporary Staff</h3>
+                  <Wrench className="h-10 w-10 text-healthcare-blue mb-4" />
+                  <h3 className="font-semibold text-lg mb-2">Technician Staffing</h3>
                   <p className="text-sm text-muted-foreground">
-                    Flexible coverage for any duration
+                    ECG, X-Ray, Lab, and other medical technicians
                   </p>
                 </div>
                 <div className="p-6 rounded-2xl bg-secondary border border-border">
-                  <Award className="h-10 w-10 text-healthcare-green mb-4" />
-                  <h3 className="font-semibold text-lg mb-2">Permanent Placement</h3>
+                  <Clock className="h-10 w-10 text-healthcare-green mb-4" />
+                  <h3 className="font-semibold text-lg mb-2">Temporary Staff</h3>
                   <p className="text-sm text-muted-foreground">
-                    Find your next long-term team member
+                    Flexible coverage for any duration
                   </p>
                 </div>
               </div>

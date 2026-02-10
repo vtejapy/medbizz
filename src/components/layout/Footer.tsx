@@ -70,6 +70,7 @@ const Footer = () => {
               {[
                 "Doctor Staffing",
                 "Nurse Staffing",
+                "Technician Staffing",
                 "Locum Tenens",
                 "Temporary Staffing",
                 "Permanent Placement",
