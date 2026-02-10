@@ -9,8 +9,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center">
-              <img src={logo} alt="MedBizz Consulting" className="h-10" />
+            <Link to="/" className="flex items-center gap-2">
+              <img src={logo} alt="MedBizz" className="h-10 w-10 object-contain" />
+              <span className="text-xl font-bold">
+                Med<span className="text-primary">Bizz</span>
+              </span>
             </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               Connecting healthcare facilities with qualified medical professionals. 
