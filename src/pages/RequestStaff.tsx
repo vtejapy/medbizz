@@ -313,11 +313,11 @@ const RequestStaff = () => {
                 </p>
                 <div className="space-y-3">
                   <a
-                    href="tel:+1234567890"
+                    href="tel:+919652389749"
                     className="flex items-center gap-3 text-sm hover:text-primary transition-colors"
                   >
                     <Phone className="h-4 w-4 text-primary" />
-                    +1 (234) 567-890
+                    +91 96523 89749
                   </a>
                   <a
                     href="mailto:urgent@medbizz.com"

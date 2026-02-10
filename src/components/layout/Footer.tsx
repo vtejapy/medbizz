@@ -91,17 +91,18 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary mt-0.5" />
                 <span className="text-primary-foreground/70 text-sm">
-                  123 Healthcare Drive<br />
-                  Medical District, MD 12345
+                  PLOT NO-897, SECRETARIAT COLONY<br />
+                  PUPPALAGUDA, Hyderabad<br />
+                  Rangareddy, Telangana 500075
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary" />
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+919652389749"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm"
                 >
-                  +1 (234) 567-890
+                  +91 96523 89749
                 </a>
               </li>
               <li className="flex items-center gap-3">
