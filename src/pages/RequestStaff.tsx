@@ -40,7 +40,7 @@ const RequestStaff = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -52,12 +52,45 @@ const RequestStaff = () => {
       return;
     }
 
-    // Simulate form submission
-    setIsSubmitted(true);
-    toast({
-      title: "Request Submitted Successfully!",
-      description: "Our team will contact you within 24 hours.",
-    });
+    const ACCESS_KEY = "fb7082db-681f-4924-9ed3-e93f2d9dbdb1"; // Web3Forms Access Key
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: ACCESS_KEY,
+          ...formData,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitted(true);
+        toast({
+          title: "Request Submitted Successfully!",
+          description: "Our team will contact you within 24 hours.",
+        });
+      } else {
+        console.error("Web3Forms submission error:", result);
+        toast({
+          title: "Submission Failed",
+          description: "There was an error sending your request. Please try again or contact us directly.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error("Network or submission error:", error);
+      toast({
+        title: "Submission Failed",
+        description: "There was a problem connecting to the server. Please check your internet connection.",
+        variant: "destructive",
+      });
+    }
   };
 
   if (isSubmitted) {

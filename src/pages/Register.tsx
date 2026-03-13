@@ -39,7 +39,7 @@ const Register = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!formData.fullName || !formData.profession || !formData.email || !formData.phone) {
@@ -50,11 +50,45 @@ const Register = () => {
       return;
     }
 
-    setIsSubmitted(true);
-    toast({
-      title: "Registration Submitted!",
-      description: "Welcome to MedBizz. We'll be in touch soon.",
-    });
+    const ACCESS_KEY = "fb7082db-681f-4924-9ed3-e93f2d9dbdb1"; // Web3Forms Access Key
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: ACCESS_KEY,
+          ...formData,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitted(true);
+        toast({
+          title: "Registration Submitted!",
+          description: "Welcome to MedBizz. We'll be in touch soon.",
+        });
+      } else {
+        console.error("Web3Forms submission error:", result);
+        toast({
+          title: "Submission Failed",
+          description: "There was an error sending your registration. Please try again or contact us directly.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error("Network or submission error:", error);
+      toast({
+        title: "Submission Failed",
+        description: "There was a problem connecting to the server. Please check your internet connection.",
+        variant: "destructive",
+      });
+    }
   };
 
   if (isSubmitted) {
