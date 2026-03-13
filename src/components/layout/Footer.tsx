@@ -91,7 +91,7 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary mt-0.5" />
                 <span className="text-primary-foreground/70 text-sm">
-                  PLOT NO-897, SECRETARIAT COLONY<br />
+                  Plot No: 4/p, Secretariat colony<br />
                   PUPPALAGUDA, Hyderabad<br />
                   Rangareddy, Telangana 500075
                 </span>
