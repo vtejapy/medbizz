@@ -77,7 +77,7 @@ medbizz/
 - **Website**: [Your website URL]
 - **Email**: info@medbizz.in
 - **Careers**: info@medbizz.in
-- **Urgent Support**: urgent@medbizz.in
+- **Urgent Support**: info@medbizz.in
 
 ## License
 

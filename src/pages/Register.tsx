@@ -61,6 +61,8 @@ const Register = () => {
         },
         body: JSON.stringify({
           access_key: ACCESS_KEY,
+          subject: `New Staff Registration: ${formData.fullName}`,
+          from_name: formData.fullName,
           ...formData,
         }),
       });

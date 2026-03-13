@@ -63,6 +63,8 @@ const RequestStaff = () => {
         },
         body: JSON.stringify({
           access_key: ACCESS_KEY,
+          subject: `New Staffing Request: ${formData.hospitalName}`,
+          from_name: formData.contactPerson,
           ...formData,
         }),
       });
@@ -354,11 +356,11 @@ const RequestStaff = () => {
                     +91 96523 89749
                   </a>
                   <a
-                    href="mailto:urgent@medbizz.com"
+                    href="mailto:info@medbizz.in"
                     className="flex items-center gap-3 text-sm hover:text-primary transition-colors"
                   >
                     <Mail className="h-4 w-4 text-primary" />
-                    urgent@medbizz.com
+                    info@medbizz.in
                   </a>
                 </div>
               </div>
