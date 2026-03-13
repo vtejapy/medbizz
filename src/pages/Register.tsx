@@ -294,8 +294,8 @@ const Register = () => {
                       <Briefcase className="h-10 w-10 text-muted-foreground mx-auto mb-4" />
                       <p className="text-muted-foreground text-sm">
                         CV upload feature coming soon. For now, please email your CV to{" "}
-                        <a href="mailto:careers@medbizz.com" className="text-primary hover:underline">
-                          careers@medbizz.com
+                        <a href="mailto:info@medbizz.in" className="text-primary hover:underline">
+                          info@medbizz.in
                         </a>
                       </p>
                     </div>
@@ -346,10 +346,10 @@ const Register = () => {
                   Our recruitment team is here to help you find the perfect opportunity.
                 </p>
                 <a
-                  href="mailto:careers@medbizz.com"
+                  href="mailto:info@medbizz.in"
                   className="text-sm text-primary hover:underline"
                 >
-                  careers@medbizz.com
+                  info@medbizz.in
                 </a>
               </div>
             </div>
