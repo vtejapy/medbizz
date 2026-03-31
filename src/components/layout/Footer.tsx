@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
-import Logo from "@/components/ui/Logo";
+import logo from "@/assets/logo-optimized.png";
 
 const Footer = () => {
   return (
@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2 group">
-              <Logo className="h-10 w-10 transition-transform group-hover:scale-110" />
+              <img src={logo} alt="MedBizz" className="h-10 w-10 object-contain transition-transform group-hover:scale-110" />
               <span className="text-xl font-bold">
                 Med<span className="text-primary">Bizz</span>
               </span>
