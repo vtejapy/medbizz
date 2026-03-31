@@ -25,7 +25,7 @@ const Header = () => {
           <img 
             src={logo} 
             alt="MedBizz" 
-            className="h-10 w-auto object-contain transition-transform group-hover:scale-110" 
+            className="h-9 w-auto object-contain transition-transform group-hover:scale-110" 
           />
           <span className="text-xl font-bold text-foreground">
             Med<span className="text-primary">Bizz</span>
