@@ -16,6 +16,7 @@ import { useToast } from "@/hooks/use-toast";
 const Register = () => {
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [cvFile, setCvFile] = useState<File | null>(null);
   const [formData, setFormData] = useState({
     fullName: "",
     profession: "",
@@ -33,6 +34,21 @@ const Register = () => {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      const file = e.target.files[0];
+      if (file.size > 5 * 1024 * 1024) {
+        toast({
+          title: "File too large",
+          description: "Please upload a CV smaller than 5MB",
+          variant: "destructive",
+        });
+        return;
+      }
+      setCvFile(file);
+    }
   };
 
   const handleSelectChange = (name: string, value: string) => {
@@ -57,19 +73,25 @@ const Register = () => {
     const ACCESS_KEY = "5042956f-9c40-4241-8a7c-839d09e39383"; // Web3Forms Access Key for info@medbizz.in
 
     try {
+      const submitData = new FormData();
+      submitData.append("access_key", ACCESS_KEY);
+      submitData.append("subject", `New Staff Registration: ${formData.fullName}`);
+      submitData.append("from_name", formData.fullName);
+      submitData.append("name", formData.fullName);
+      
+      // Append all form fields
+      Object.entries(formData).forEach(([key, value]) => {
+        submitData.append(key, value);
+      });
+
+      // Append CV file if selected
+      if (cvFile) {
+        submitData.append("attachment", cvFile);
+      }
+
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          access_key: ACCESS_KEY,
-          subject: `New Staff Registration: ${formData.fullName}`,
-          from_name: formData.fullName,
-          name: formData.fullName,
-          ...formData,
-        }),
+        body: submitData,
       });
 
       const result = await response.json();
@@ -295,17 +317,35 @@ const Register = () => {
                     />
                   </div>
 
-                  {/* CV Upload Placeholder */}
+                  {/* CV Upload */}
                   <div className="space-y-2">
-                    <Label>Upload CV (Coming Soon)</Label>
-                    <div className="border-2 border-dashed border-border rounded-xl p-8 text-center">
-                      <Briefcase className="h-10 w-10 text-muted-foreground mx-auto mb-4" />
-                      <p className="text-muted-foreground text-sm">
-                        CV upload feature coming soon. For now, please email your CV to{" "}
-                        <a href="mailto:info@medbizz.in" className="text-primary hover:underline">
-                          info@medbizz.in
-                        </a>
-                      </p>
+                    <Label htmlFor="cv-upload">Upload CV (Max 5MB)</Label>
+                    <div className="border-2 border-dashed border-border rounded-xl p-8 text-center bg-secondary/30 hover:bg-secondary/50 transition-colors cursor-pointer relative">
+                      <input
+                        type="file"
+                        id="cv-upload"
+                        accept=".pdf,.doc,.docx"
+                        className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                        onChange={handleFileChange}
+                      />
+                      <Briefcase className="h-10 w-10 text-primary mx-auto mb-4" />
+                      {cvFile ? (
+                        <div className="space-y-2">
+                          <p className="text-primary font-medium">{cvFile.name}</p>
+                          <p className="text-xs text-muted-foreground">
+                            Click or drag to replace
+                          </p>
+                        </div>
+                      ) : (
+                        <div className="space-y-2">
+                          <p className="text-muted-foreground text-sm font-medium">
+                            Click to upload or drag and drop
+                          </p>
+                          <p className="text-xs text-muted-foreground">
+                            PDF, DOC, DOCX up to 5MB
+                          </p>
+                        </div>
+                      )}
                     </div>
                   </div>
 
