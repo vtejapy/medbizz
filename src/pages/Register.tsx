@@ -16,7 +16,6 @@ import { useToast } from "@/hooks/use-toast";
 const Register = () => {
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [cvFile, setCvFile] = useState<File | null>(null);
   const [formData, setFormData] = useState({
     fullName: "",
     profession: "",
@@ -27,6 +26,7 @@ const Register = () => {
     email: "",
     phone: "",
     about: "",
+    cvLink: "",
   });
 
   const handleInputChange = (
@@ -34,21 +34,6 @@ const Register = () => {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      const file = e.target.files[0];
-      if (file.size > 5 * 1024 * 1024) {
-        toast({
-          title: "File too large",
-          description: "Please upload a CV smaller than 5MB",
-          variant: "destructive",
-        });
-        return;
-      }
-      setCvFile(file);
-    }
   };
 
   const handleSelectChange = (name: string, value: string) => {
@@ -73,25 +58,19 @@ const Register = () => {
     const ACCESS_KEY = "5042956f-9c40-4241-8a7c-839d09e39383"; // Web3Forms Access Key for info@medbizz.in
 
     try {
-      const submitData = new FormData();
-      submitData.append("access_key", ACCESS_KEY);
-      submitData.append("subject", `New Staff Registration: ${formData.fullName}`);
-      submitData.append("from_name", formData.fullName);
-      submitData.append("name", formData.fullName);
-      
-      // Append all form fields
-      Object.entries(formData).forEach(([key, value]) => {
-        submitData.append(key, value);
-      });
-
-      // Append CV file if selected
-      if (cvFile) {
-        submitData.append("attachment", cvFile);
-      }
-
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: submitData,
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: ACCESS_KEY,
+          subject: `New Staff Registration: ${formData.fullName}`,
+          from_name: formData.fullName,
+          name: formData.fullName,
+          ...formData,
+        }),
       });
 
       const result = await response.json();
@@ -317,36 +296,33 @@ const Register = () => {
                     />
                   </div>
 
-                  {/* CV Upload */}
-                  <div className="space-y-2">
-                    <Label htmlFor="cv-upload">Upload CV (Max 5MB)</Label>
-                    <div className="border-2 border-dashed border-border rounded-xl p-8 text-center bg-secondary/30 hover:bg-secondary/50 transition-colors cursor-pointer relative">
-                      <input
-                        type="file"
-                        id="cv-upload"
-                        accept=".pdf,.doc,.docx"
-                        className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                        onChange={handleFileChange}
-                      />
-                      <Briefcase className="h-10 w-10 text-primary mx-auto mb-4" />
-                      {cvFile ? (
-                        <div className="space-y-2">
-                          <p className="text-primary font-medium">{cvFile.name}</p>
-                          <p className="text-xs text-muted-foreground">
-                            Click or drag to replace
-                          </p>
-                        </div>
-                      ) : (
-                        <div className="space-y-2">
-                          <p className="text-muted-foreground text-sm font-medium">
-                            Click to upload or drag and drop
-                          </p>
-                          <p className="text-xs text-muted-foreground">
-                            PDF, DOC, DOCX up to 5MB
-                          </p>
-                        </div>
-                      )}
+                  {/* CV Link */}
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <Label htmlFor="cvLink">Curriculum Vitae (CV)</Label>
+                      <span className="text-xs text-muted-foreground">Recommended</span>
                     </div>
+                    <div className="relative">
+                      <div className="absolute left-3 top-3">
+                        <Briefcase className="h-5 w-5 text-muted-foreground" />
+                      </div>
+                      <Input
+                        id="cvLink"
+                        name="cvLink"
+                        placeholder="Link to your CV (Google Drive, Dropbox, etc.)"
+                        className="pl-10"
+                        value={formData.cvLink}
+                        onChange={handleInputChange}
+                      />
+                    </div>
+                    <p className="text-xs text-muted-foreground bg-secondary/30 p-3 rounded-lg border border-border">
+                      <strong>Tip:</strong> Upload your CV to Google Drive or Dropbox, 
+                      set the sharing to "Anyone with the link", and paste the link above. 
+                      Alternatively, you can email it to{" "}
+                      <a href="mailto:info@medbizz.in" className="text-primary hover:underline">
+                        info@medbizz.in
+                      </a>
+                    </p>
                   </div>
 
                   <Button type="submit" variant="accent" size="xl" className="w-full">
