@@ -54,7 +54,7 @@ const Register = () => {
     // 1. Visit https://web3forms.com/
     // 2. Request a new Access Key for info@medbizz.in
     // 3. Replace the key below with your new key
-    const ACCESS_KEY = "923ad406-0081-4a40-9ba9-6da52c48c412"; // Web3Forms Access Key for info@medbizz.in
+    const ACCESS_KEY = "5042956f-9c40-4241-8a7c-839d09e39383"; // Web3Forms Access Key for info@medbizz.in
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
