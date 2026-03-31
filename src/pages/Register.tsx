@@ -50,7 +50,11 @@ const Register = () => {
       return;
     }
 
-    const ACCESS_KEY = "fb7082db-681f-4924-9ed3-e93f2d9dbdb1"; // Web3Forms Access Key
+    // If emails are not being received at info@medbizz.in, please:
+    // 1. Visit https://web3forms.com/
+    // 2. Request a new Access Key for info@medbizz.in
+    // 3. Replace the key below with your new key
+    const ACCESS_KEY = "923ad406-0081-4a40-9ba9-6da52c48c412"; // Web3Forms Access Key for info@medbizz.in
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -63,11 +67,13 @@ const Register = () => {
           access_key: ACCESS_KEY,
           subject: `New Staff Registration: ${formData.fullName}`,
           from_name: formData.fullName,
+          name: formData.fullName,
           ...formData,
         }),
       });
 
       const result = await response.json();
+      console.log("Web3Forms response:", result);
 
       if (result.success) {
         setIsSubmitted(true);
@@ -79,7 +85,7 @@ const Register = () => {
         console.error("Web3Forms submission error:", result);
         toast({
           title: "Submission Failed",
-          description: "There was an error sending your registration. Please try again or contact us directly.",
+          description: result.message || "There was an error sending your registration. Please try again or contact us directly.",
           variant: "destructive",
         });
       }
@@ -87,7 +93,7 @@ const Register = () => {
       console.error("Network or submission error:", error);
       toast({
         title: "Submission Failed",
-        description: "There was a problem connecting to the server. Please check your internet connection.",
+        description: "There was a problem connecting to the server. Please check your internet connection and try again.",
         variant: "destructive",
       });
     }
