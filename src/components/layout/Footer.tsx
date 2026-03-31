@@ -10,9 +10,11 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2 group">
-              <div className="bg-white rounded-lg p-1 transition-transform group-hover:scale-110">
-                <img src={logo} alt="MedBizz" className="h-8 w-8 object-contain" />
-              </div>
+              <img 
+                src={logo} 
+                alt="MedBizz" 
+                className="h-8 w-auto object-contain transition-transform group-hover:scale-110" 
+              />
               <span className="text-xl font-bold">
                 Med<span className="text-primary">Bizz</span>
               </span>
