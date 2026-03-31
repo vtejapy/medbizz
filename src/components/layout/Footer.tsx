@@ -13,7 +13,7 @@ const Footer = () => {
               <img 
                 src={logo} 
                 alt="MedBizz" 
-                className="h-8 w-auto object-contain transition-transform group-hover:scale-110" 
+                className="h-12 w-auto object-contain transition-transform group-hover:scale-110" 
               />
               <span className="text-xl font-bold">
                 Med<span className="text-primary">Bizz</span>
