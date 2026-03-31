@@ -22,7 +22,9 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
-          <img src={logo} alt="MedBizz" className="h-10 w-10 object-contain transition-transform group-hover:scale-110" />
+          <div className="bg-white rounded-lg p-1 shadow-sm transition-transform group-hover:scale-110">
+            <img src={logo} alt="MedBizz" className="h-8 w-8 object-contain" />
+          </div>
           <span className="text-xl font-bold text-foreground">
             Med<span className="text-primary">Bizz</span>
           </span>
