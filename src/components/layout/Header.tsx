@@ -52,7 +52,7 @@ const Header = () => {
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="tel:+919652389749"
+            href="tel:+919154193939"
             className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             <Phone className="h-4 w-4" />

@@ -355,11 +355,11 @@ const RequestStaff = () => {
                 </p>
                 <div className="space-y-3">
                   <a
-                    href="tel:+919652389749"
+                    href="tel:+919154193939"
                     className="flex items-center gap-3 text-sm hover:text-primary transition-colors"
                   >
                     <Phone className="h-4 w-4 text-primary" />
-                    +91 96523 89749
+                    +91 91541 93939
                   </a>
                   <a
                     href="mailto:info@medbizz.in"
