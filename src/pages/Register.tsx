@@ -104,8 +104,8 @@ const Register = () => {
     return (
       <div className="min-h-[80vh] flex items-center justify-center bg-background">
         <div className="text-center max-w-md mx-auto p-8">
-          <div className="w-20 h-20 rounded-full accent-gradient flex items-center justify-center mx-auto mb-6">
-            <CheckCircle2 className="h-10 w-10 text-accent-foreground" />
+          <div className="w-20 h-20 rounded-full hero-gradient flex items-center justify-center mx-auto mb-6">
+            <CheckCircle2 className="h-10 w-10 text-primary-foreground" />
           </div>
           <h1 className="text-3xl font-bold mb-4">Welcome to MedBizz!</h1>
           <p className="text-muted-foreground mb-8">
@@ -123,17 +123,17 @@ const Register = () => {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="py-16 accent-gradient">
+      <section className="py-24 hero-gradient">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-foreground/20 text-accent-foreground text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/20 text-primary-foreground text-sm font-medium mb-6">
               <Award className="h-4 w-4" />
               Join 10,000+ Healthcare Professionals
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-accent-foreground mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
               Join Our Medical Team
             </h1>
-            <p className="text-xl text-accent-foreground/80 leading-relaxed">
+            <p className="text-xl text-primary-foreground/80 leading-relaxed">
               Register to access rewarding opportunities with top healthcare facilities. 
               Flexible assignments that fit your schedule.
             </p>
@@ -149,8 +149,8 @@ const Register = () => {
             <div className="lg:col-span-2">
               <div className="bg-card rounded-2xl border border-border p-8 shadow-lg">
                 <div className="flex items-center gap-3 mb-8">
-                  <div className="w-12 h-12 rounded-xl accent-gradient flex items-center justify-center">
-                    <Stethoscope className="h-6 w-6 text-accent-foreground" />
+                  <div className="w-12 h-12 rounded-xl hero-gradient flex items-center justify-center">
+                    <Stethoscope className="h-6 w-6 text-primary-foreground" />
                   </div>
                   <div>
                     <h2 className="text-xl font-semibold">Professional Registration</h2>
@@ -325,7 +325,7 @@ const Register = () => {
                     </p>
                   </div>
 
-                  <Button type="submit" variant="accent" size="xl" className="w-full">
+                  <Button type="submit" variant="hero" size="xl" className="w-full">
                     Submit Registration
                   </Button>
                 </form>
@@ -353,7 +353,7 @@ const Register = () => {
                 </ul>
               </div>
 
-              <div className="bg-healthcare-coral-light rounded-2xl border border-accent/20 p-6">
+              <div className="bg-healthcare-teal-light rounded-2xl border border-primary/20 p-6">
                 <h3 className="font-semibold mb-4">What We Look For</h3>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li>• Active medical license in good standing</li>

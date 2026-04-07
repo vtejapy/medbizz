@@ -24,7 +24,7 @@
     --muted: 210 15% 94%;
     --muted-foreground: 215 15% 45%;
 
-    --accent: 15 90% 60%;
+    --accent: 187 80% 35%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -40,8 +40,8 @@
     --healthcare-teal: 187 80% 35%;
     --healthcare-teal-light: 187 60% 95%;
     --healthcare-teal-dark: 187 85% 25%;
-    --healthcare-coral: 15 90% 60%;
-    --healthcare-coral-light: 15 85% 95%;
+    --healthcare-coral: 187 80% 35%;
+    --healthcare-coral-light: 187 60% 95%;
     --healthcare-blue: 210 80% 55%;
     --healthcare-green: 160 60% 45%;
     --healthcare-slate: 215 20% 65%;
@@ -49,7 +49,7 @@
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(187 80% 35%) 0%, hsl(210 80% 45%) 100%);
     --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(15 90% 60%) 0%, hsl(25 95% 55%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(187 80% 35%) 0%, hsl(210 80% 45%) 100%);
 
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 hsl(215 25% 15% / 0.05);
@@ -87,7 +87,7 @@
     --muted: 215 20% 20%;
     --muted-foreground: 215 15% 60%;
 
-    --accent: 15 85% 55%;
+    --accent: 187 70% 45%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;

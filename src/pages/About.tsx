@@ -80,8 +80,8 @@ const About = () => {
             </div>
             
             <div className="p-10 rounded-2xl bg-card border border-border shadow-lg">
-              <div className="w-16 h-16 rounded-xl accent-gradient flex items-center justify-center mb-6">
-                <Eye className="h-8 w-8 text-accent-foreground" />
+              <div className="w-16 h-16 rounded-xl hero-gradient flex items-center justify-center mb-6">
+                <Eye className="h-8 w-8 text-primary-foreground" />
               </div>
               <h2 className="text-2xl font-bold mb-4">Our Vision</h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
@@ -214,7 +214,7 @@ const About = () => {
             for their staffing needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="accent" size="xl" asChild>
+            <Button variant="hero" size="xl" asChild>
               <Link to="/request-staff">
                 Request Staff
                 <ArrowRight className="h-5 w-5" />
@@ -233,3 +233,4 @@ const About = () => {
 };
 
 export default About;
+

@@ -95,7 +95,7 @@ const Index = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-slide-up">
-              <Button variant="accent" size="xl" asChild>
+              <Button variant="hero" size="xl" asChild>
                 <Link to="/request-staff">
                   <Building className="h-5 w-5" />
                   Request Medical Staff
@@ -239,8 +239,8 @@ const Index = () => {
                     Board-certified physicians for all specialties
                   </p>
                 </div>
-                <div className="p-6 rounded-2xl bg-healthcare-coral-light border border-accent/20">
-                  <UserCheck className="h-10 w-10 text-accent mb-4" />
+                <div className="p-6 rounded-2xl bg-healthcare-teal-light border border-primary/20">
+                  <UserCheck className="h-10 w-10 text-primary mb-4" />
                   <h3 className="font-semibold text-lg mb-2">Nurse Staffing</h3>
                   <p className="text-sm text-muted-foreground">
                     RNs, LPNs, and specialized nursing professionals
@@ -279,7 +279,7 @@ const Index = () => {
             we're here to help 24/7.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="accent" size="xl" asChild>
+            <Button variant="hero" size="xl" asChild>
               <Link to="/request-staff">
                 Request Staff Now
                 <ArrowRight className="h-5 w-5" />

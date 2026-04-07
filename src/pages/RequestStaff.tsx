@@ -124,7 +124,7 @@ const RequestStaff = () => {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="py-16 hero-gradient">
+      <section className="py-24 hero-gradient">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/20 text-primary-foreground text-sm font-medium mb-6">
@@ -319,7 +319,7 @@ const RequestStaff = () => {
                     />
                   </div>
 
-                  <Button type="submit" variant="accent" size="xl" className="w-full">
+                  <Button type="submit" variant="hero" size="xl" className="w-full">
                     Submit Staffing Request
                   </Button>
                 </form>

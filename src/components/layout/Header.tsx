@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
-import logo from "@/assets/logo-optimized.png";
+import Logo from "@/components/ui/Logo";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,18 +20,15 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container flex h-20 items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
-          <img 
-            src={logo} 
-            alt="MedBizz" 
-            className="h-9 w-auto object-contain transition-transform group-hover:scale-110" 
+          <Logo
+            className="h-12 w-auto transition-transform group-hover:scale-110"
           />
           <span className="text-xl font-bold text-foreground">
             Med<span className="text-primary">Bizz</span>
           </span>
         </Link>
-
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
@@ -58,7 +55,7 @@ const Header = () => {
             <Phone className="h-4 w-4" />
             <span>24/7 Support</span>
           </a>
-          <Button variant="accent" size="sm" asChild>
+          <Button variant="hero" size="sm" asChild>
             <Link to="/request-staff">Get Started</Link>
           </Button>
         </div>
@@ -91,7 +88,7 @@ const Header = () => {
               </Link>
             ))}
             <div className="pt-4 border-t border-border mt-2">
-              <Button variant="accent" className="w-full" asChild>
+              <Button variant="hero" className="w-full" asChild>
                 <Link to="/request-staff" onClick={() => setIsMenuOpen(false)}>
                   Get Started
                 </Link>

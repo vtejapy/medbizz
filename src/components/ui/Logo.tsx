@@ -12,40 +12,10 @@ const Logo: React.FC<LogoProps> = ({ className }) => {
       className={className}
       xmlns="http://www.w3.org/2000/svg"
     >
-      {/* Background shape */}
-      <rect
-        x="10"
-        y="10"
-        width="80"
-        height="80"
-        rx="16"
+      {/* Shield shape only */}
+      <path
+        d="M50 5 L12 22 V50 C12 75 50 95 50 95 C50 95 88 75 88 50 V22 L50 5 Z"
         className="fill-primary"
-      />
-      
-      {/* Stylized M/B or medical cross */}
-      <rect
-        x="42"
-        y="25"
-        width="16"
-        height="50"
-        rx="4"
-        className="fill-primary-foreground"
-      />
-      <rect
-        x="25"
-        y="42"
-        width="50"
-        height="16"
-        rx="4"
-        className="fill-primary-foreground"
-      />
-      
-      {/* Dynamic pulse or accent */}
-      <circle
-        cx="75"
-        cy="75"
-        r="8"
-        className="fill-accent"
       />
     </svg>
   );
