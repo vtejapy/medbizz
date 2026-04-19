@@ -22,9 +22,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
       <div className="container flex h-20 items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
-          <img 
-            src="/logo.svg" 
-            alt="MedBizz Logo"
+          <Logo
             className="h-12 w-auto transition-transform group-hover:scale-110"
           />
           <span className="text-xl font-bold text-foreground">
