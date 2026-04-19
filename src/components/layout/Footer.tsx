@@ -9,9 +9,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center gap-2 group">
-              <Logo
-                className="h-12 w-auto transition-transform group-hover:scale-110"
+            <Link to="/" className="flex items-center gap-2 mb-6 group">
+              <img 
+                src="/logo.svg" 
+                alt="MedBizz Logo"
+                className="h-10 w-auto transition-transform group-hover:scale-110"
               />
               <span className="text-xl font-bold">
                 Med<span className="text-primary">Bizz</span>

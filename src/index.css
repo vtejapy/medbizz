@@ -15,7 +15,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 25% 15%;
 
-    --primary: 187 80% 35%;
+    --primary: 210 100% 50%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 210 20% 96%;
@@ -24,7 +24,7 @@
     --muted: 210 15% 94%;
     --muted-foreground: 215 15% 45%;
 
-    --accent: 187 80% 35%;
+    --accent: 210 100% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -32,31 +32,31 @@
 
     --border: 210 20% 90%;
     --input: 210 20% 90%;
-    --ring: 187 80% 35%;
+    --ring: 210 100% 50%;
 
     --radius: 0.75rem;
 
     /* Custom healthcare tokens */
-    --healthcare-teal: 187 80% 35%;
-    --healthcare-teal-light: 187 60% 95%;
-    --healthcare-teal-dark: 187 85% 25%;
-    --healthcare-coral: 187 80% 35%;
-    --healthcare-coral-light: 187 60% 95%;
+    --healthcare-teal: 210 100% 50%;
+    --healthcare-teal-light: 210 60% 95%;
+    --healthcare-teal-dark: 210 85% 40%;
+    --healthcare-coral: 210 100% 50%;
+    --healthcare-coral-light: 210 60% 95%;
     --healthcare-blue: 210 80% 55%;
     --healthcare-green: 160 60% 45%;
     --healthcare-slate: 215 20% 65%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(187 80% 35%) 0%, hsl(210 80% 45%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 50%) 0%, hsl(210 100% 40%) 100%);
     --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(187 80% 35%) 0%, hsl(210 80% 45%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(210 100% 50%) 0%, hsl(210 100% 40%) 100%);
 
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 hsl(215 25% 15% / 0.05);
     --shadow-md: 0 4px 6px -1px hsl(215 25% 15% / 0.1), 0 2px 4px -2px hsl(215 25% 15% / 0.1);
     --shadow-lg: 0 10px 15px -3px hsl(215 25% 15% / 0.1), 0 4px 6px -4px hsl(215 25% 15% / 0.1);
     --shadow-xl: 0 20px 25px -5px hsl(215 25% 15% / 0.1), 0 8px 10px -6px hsl(215 25% 15% / 0.1);
-    --shadow-glow: 0 0 40px hsl(187 80% 35% / 0.15);
+    --shadow-glow: 0 0 40px hsl(210 100% 50% / 0.15);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;

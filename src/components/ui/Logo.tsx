@@ -36,10 +36,10 @@ const Logo: React.FC<LogoProps> = ({ className }) => {
         <rect x="50" y="0" width="50" height="100" className="fill-primary" />
       </g>
 
-      {/* Red Pulse/Life Line */}
+      {/* White Pulse/Life Line */}
       <path
         d="M20 50 H35 L42 30 L50 70 L58 15 L65 50 H80"
-        stroke="#ef4444" 
+        stroke="white" 
         strokeWidth="5"
         strokeLinecap="round"
         strokeLinejoin="round"
