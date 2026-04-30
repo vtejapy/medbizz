@@ -123,18 +123,18 @@ const Register = () => {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="py-16 accent-gradient">
+      <section className="py-16 hero-gradient">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-foreground/20 text-accent-foreground text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/20 text-primary-foreground text-sm font-medium mb-6">
               <Award className="h-4 w-4" />
               Join 10,000+ Healthcare Professionals
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-accent-foreground mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
               Join Our Medical Team
             </h1>
-            <p className="text-xl text-accent-foreground/80 leading-relaxed">
-              Register to access rewarding opportunities with top healthcare facilities. 
+            <p className="text-xl text-primary-foreground/80 leading-relaxed">
+              Register to access rewarding opportunities with top healthcare facilities.
               Flexible assignments that fit your schedule.
             </p>
           </div>
