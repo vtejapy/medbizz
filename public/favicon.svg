@@ -1,4 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="8" fill="#0EA5E9"/>
-  <path d="M16 24.5C15.5 24.5 15 24.3 14.6 23.9C12.1 21.6 7 17.2 7 13C7 10.2 9.2 8 12 8C13.5 8 14.9 8.7 16 9.8C17.1 8.7 18.5 8 20 8C22.8 8 25 10.2 25 13C25 17.2 19.9 21.6 17.4 23.9C17 24.3 16.5 24.5 16 24.5Z" fill="white"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <path
+      id="shield"
+      d="M50 5 L12 22 V50 C12 75 50 95 50 95 C50 95 88 75 88 50 V22 Z"
+    />
+    <clipPath id="clip">
+      <use href="#shield" />
+    </clipPath>
+  </defs>
+
+  <!-- Shield background: left white, right blue -->
+  <use href="#shield" fill="#F4F6F8" />
+  <g clip-path="url(#clip)">
+    <rect x="50" y="0" width="50" height="100" fill="#214988" />
+  </g>
+
+  <!-- Shield border -->
+  <use href="#shield" stroke="#214988" stroke-width="3" />
+
+  <!-- ECG / pulse line -->
+  <path
+    d="M18 52 H32 L38 42 L46 68 L54 30 L62 60 H82"
+    stroke="#C83232"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
 </svg>

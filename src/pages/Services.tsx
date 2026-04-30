@@ -166,8 +166,8 @@ const Services = () => {
       <section className="py-24 bg-secondary/50">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
-            <div className="w-14 h-14 rounded-xl hero-gradient flex items-center justify-center">
-              <UserCheck className="h-7 w-7 text-primary-foreground" />
+            <div className="w-14 h-14 rounded-xl accent-gradient flex items-center justify-center">
+              <UserCheck className="h-7 w-7 text-accent-foreground" />
             </div>
             <div>
               <h2 className="text-3xl font-bold">Nurse Staffing</h2>
@@ -306,7 +306,7 @@ const Services = () => {
             within 24 hours.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="xl" asChild>
+            <Button variant="accent" size="xl" asChild>
               <Link to="/request-staff">
                 Request Staff Now
                 <ArrowRight className="h-5 w-5" />
@@ -325,4 +325,3 @@ const Services = () => {
 };
 
 export default Services;
-
