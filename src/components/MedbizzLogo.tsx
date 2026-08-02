@@ -31,8 +31,13 @@ export function MedbizzLogo({ className = "h-10 w-auto" }: Props) {
           strokeLinejoin="round"
         />
       </svg>
-      <span className="text-lg font-semibold tracking-tight text-foreground">
-        medbizz
+      <span className="flex flex-col leading-none">
+        <span className="text-lg font-semibold tracking-tight text-foreground">
+          medbizz
+        </span>
+        <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
+          Consulting
+        </span>
       </span>
     </span>
   );
