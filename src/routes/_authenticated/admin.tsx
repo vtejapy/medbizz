@@ -108,8 +108,10 @@ function AdminPage() {
           <div className="mt-10 rounded-2xl border border-border bg-card p-8">
             <h2 className="font-display text-2xl text-foreground">No access</h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              This account is not an admin. Ask an existing admin to grant you access.
+              This account is not an admin. Admin access requires a company email ending in
+              <strong> @medbizz.in</strong> — ask an existing admin to grant you access.
             </p>
+
           </div>
         )}
       </main>

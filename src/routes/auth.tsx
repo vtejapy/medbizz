@@ -41,6 +41,10 @@ function AuthPage() {
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (mode === "signup" && !email.toLowerCase().trim().endsWith("@medbizz.in")) {
+      toast.error("Only @medbizz.in email addresses can create a team account");
+      return;
+    }
     setBusy(true);
     try {
       if (mode === "signup") {
@@ -50,6 +54,7 @@ function AuthPage() {
           options: { emailRedirectTo: `${window.location.origin}/admin` },
         });
         if (error) throw error;
+
         if (!data.session) {
           toast.success("Check your email to confirm your account, then sign in.");
           setMode("signin");
@@ -77,8 +82,10 @@ function AuthPage() {
             {mode === "signin" ? "Team sign in" : "Create team account"}
           </h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            Manage job openings and review applications.
+            Manage job openings and review applications. Only <strong>@medbizz.in</strong> email
+            addresses are allowed.
           </p>
+
           <form onSubmit={onSubmit} className="mt-6 space-y-4">
             <div>
               <label htmlFor="email" className="text-xs uppercase tracking-wider text-muted-foreground">

@@ -33,6 +33,15 @@ export type AdminApplication = {
 const ADMIN_JOB_COLUMNS =
   "id, title, department, location, employment_type, experience_level, salary_range, description, requirements, is_active, posted_at";
 
+export const ALLOWED_EMAIL_DOMAIN = "medbizz.in";
+
+function isCompanyEmail(email: unknown): boolean {
+  return (
+    typeof email === "string" &&
+    email.toLowerCase().trim().endsWith(`@${ALLOWED_EMAIL_DOMAIN}`)
+  );
+}
+
 async function assertAdmin(context: { supabase: any; userId: string }) {
   const { data, error } = await context.supabase.rpc("has_role", {
     _user_id: context.userId,
@@ -41,6 +50,7 @@ async function assertAdmin(context: { supabase: any; userId: string }) {
   if (error) throw new Error(error.message);
   if (!data) throw new Error("Forbidden");
 }
+
 
 /** Returns whether the signed-in user is an admin, and whether any admin exists yet. */
 export const getAdminStatus = createServerFn({ method: "GET" })
@@ -51,20 +61,31 @@ export const getAdminStatus = createServerFn({ method: "GET" })
       _role: "admin",
     });
     if (error) throw new Error(error.message);
-    if (data) return { isAdmin: true as const, canClaim: false };
+    if (data) return { isAdmin: true as const, canClaim: false, allowedDomain: ALLOWED_EMAIL_DOMAIN };
+
+    if (!isCompanyEmail((context.claims as { email?: string }).email)) {
+      return { isAdmin: false as const, canClaim: false, allowedDomain: ALLOWED_EMAIL_DOMAIN };
+    }
 
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     const { count } = await supabaseAdmin
       .from("user_roles")
       .select("id", { count: "exact", head: true })
       .eq("role", "admin");
-    return { isAdmin: false as const, canClaim: (count ?? 0) === 0 };
+    return {
+      isAdmin: false as const,
+      canClaim: (count ?? 0) === 0,
+      allowedDomain: ALLOWED_EMAIL_DOMAIN,
+    };
   });
 
-/** First signed-in user can claim admin access; afterwards this is closed forever. */
+/** First signed-in user with a company email can claim admin access; afterwards this closes. */
 export const claimFirstAdmin = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .handler(async ({ context }) => {
+    if (!isCompanyEmail((context.claims as { email?: string }).email)) {
+      throw new Error(`Only @${ALLOWED_EMAIL_DOMAIN} email addresses can be admins`);
+    }
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     const { count } = await supabaseAdmin
       .from("user_roles")
@@ -77,6 +98,7 @@ export const claimFirstAdmin = createServerFn({ method: "POST" })
     if (error) throw new Error(error.message);
     return { ok: true as const };
   });
+
 
 export const listAllJobs = createServerFn({ method: "GET" })
   .middleware([requireSupabaseAuth])
