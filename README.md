@@ -8,7 +8,7 @@ MedBizz is a comprehensive healthcare staffing solution designed to bridge the g
 
 ## Features
 
-- **For Hospitals**: Request qualified medical staff (doctors, nurses) for temporary or permanent positions
+- **For Hospitals**: Request qualified medical staff (doctors, nurses) for temporary or  permanent positions
 - **For Medical Professionals**: Register and find rewarding opportunities with top healthcare facilities
 - **Services**: Doctor staffing, nurse staffing, locum tenens, temporary & permanent placements
 - **24/7 Support**: Round-the-clock assistance for urgent staffing needs
